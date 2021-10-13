@@ -1,5 +1,8 @@
 ### SPP-EEGNET: An Input-Agnostic Self-Supervised EEG Rrpresentation Model For Inter-Dataset Transfer Learning
 
+---
+The paper is under review for ICASSP 2022 conference
+
 
 
 ---
@@ -43,16 +46,66 @@ classification performance on new datasets.
 
 **Code Structure:**
 
--datasets/
+datasets/
+> tuh_ssl_edf.py -- *tuh normal/abnormal dataset data loader used for self-supervised training*
 
--models/
+> tuh_downstream_edf.py  -- *tuh normal/abnormal dataset data loader used for downstream transfer learning*
 
--preprocessing/
+> EEGBCI_edf.py -- *EEGBCI motor imagery dataset data loader used for downstream transfer learning*
 
--downstream/
 
--ssl_train.py
+models/
+> feature_extractor.py -- *SPP-EEG feature extractor model architecture*
 
+> SSL_model.py -- *Contrastive learning model used for self-supervised learning*
+
+> downstream_models.py -- *some downstream models used for transfer learning*
+
+
+preprocessing/
+> preprocesses.py -- *EEG signal propressing code for self-supervised training on the tuh normal/abnormal dataset*
+
+> signalTransformation.py -- *EEG signal transformations used for generating augmenting EEG signals*
+
+> tuh_downstream_preprocess.py -- *EEG signal proprocessing for downstram tuh normal/abnormal dataset*
+
+
+train_ssl.py -- *self-supervised training process on tuh normal/abnormal dataset*
+
+
+tuh_downstream.py -- *tuh normal/abnormal dataset downstream transfer learning process* 
+
+
+EEGBCI_downstream.py -- *EEGBCI motor imagery dataset downstream transfer learning process*
+
+
+train_helpers.py -- *Some training helper functions*
+
+
+--- 
+To train feature extractor on the self-supervised contrastive task:
+
+```
+python train_ssl.py -b 32 -e 100 --save-name='ssl_ckp'
+
+```
+
+To transfer trained feature extractor to tuh dataset
+
+```
+python tuh_downstream.py -e 50 --load-model='./saved_models/ssl_ckp.pt' --layers=4
+```
+
+To transfer trained feature extractor to EEGBCI motor imagery dataset
+
+```
+python EEGBCI.py -e 50 --load-model='./saved_models/ssl_ckp.pt' --task-number=1 --layers=4  
+```
+
+To train the feature extractor on EEGBCI motor imagery dataset from scratch
+```
+python EEGBCI.py -e 50 --task-number=1
+```
 
 
 
