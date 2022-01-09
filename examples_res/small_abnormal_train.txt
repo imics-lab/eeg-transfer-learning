@@ -1,0 +1,5 @@
+/home/x_l30/EEG_analysis/datasets/tuh_eeg_abnormal/eval/abnormal/01_tcp_ar/096/00009693/s003_2013_02_28/00009693_s003_t003.edf
+/home/x_l30/EEG_analysis/datasets/tuh_eeg_abnormal/eval/abnormal/01_tcp_ar/096/00009688/s001_2011_12_14/00009688_s001_t000.edf
+/home/x_l30/EEG_analysis/datasets/tuh_eeg_abnormal/eval/abnormal/01_tcp_ar/056/00005649/s002_2010_06_03/00005649_s002_t000.edf
+/home/x_l30/EEG_analysis/datasets/tuh_eeg_abnormal/eval/abnormal/01_tcp_ar/098/00009800/s001_2012_03_19/00009800_s001_t000.edf
+/home/x_l30/EEG_analysis/datasets/tuh_eeg_abnormal/eval/abnormal/01_tcp_ar/098/00009820/s002_2013_04_11/00009820_s002_t002.edf
