@@ -107,5 +107,8 @@ To train the feature extractor on EEGBCI motor imagery dataset from scratch
 python EEGBCI.py -e 50 --task-number=1
 ```
 
-
+To check example codes about how to load the pre-trained feature extractor and conduct transfer learning
+```
+examples.ipynb
+```
 
