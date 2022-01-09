@@ -111,4 +111,6 @@ To check example codes about how to load the pre-trained feature extractor and c
 ```
 examples.ipynb
 ```
-
+More experiment visualization plots are shown in foder ./images
+The raw loss and accuracy results of transfer learning on extreme small datasets are shown in folder ./examples_res/tuh_tf_results
+Note: When we plot the transfer learning training and testing accuracy, we choose the epoch number where the model shows the smallest loss on the test set. 
