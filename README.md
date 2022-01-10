@@ -106,25 +106,30 @@ examples.ipynb -- *The example codes how to do conduct transfer learning on the 
 To train feature extractor on the self-supervised contrastive task:
 
 ```
-python train_ssl.py -b 32 -e 100 --save-name='ssl_ckp'
+python train_ssl.py -b 32 -e 100 --save-name='tuh_all_ckp'
 
 ```
 
 To transfer trained feature extractor to tuh dataset
 
 ```
-python tuh_downstream.py -e 50 --load-model='./saved_models/ssl_ckp.pt' --layers=4
+python tuh_downstream.py -e 50 --load-model='./example_res/tuh_all_ckp.pt' --layers=4
 ```
 
 To transfer trained feature extractor to EEGBCI motor imagery dataset
 
 ```
-python EEGBCI.py -e 50 --load-model='./saved_models/ssl_ckp.pt' --task-number=1 --layers=4  
+python EEGBCI.py -e 50 --load-model='./example_res/tuh_all_ckp.pt' --task-number=1 --layers=4  
 ```
 
 To train the feature extractor on EEGBCI motor imagery dataset from scratch
 ```
 python EEGBCI.py -e 50 --task-number=1
+```
+
+To transfer trained feature extractor to the extreme small tuh dataset
+```
+python tuh_tf_smallset.py -e 50 --load-model='./example_res/tuh_all_ckp.pt' --layers=4 --freeze=0
 ```
 
 To check example codes about how to load the pre-trained feature extractor and conduct transfer learning
