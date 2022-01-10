@@ -101,6 +101,14 @@ tuh_tf_smallset.py -- *transfer learning process on extreme small tuh normal/abn
 
 examples.ipynb -- *The example codes how to do conduct transfer learning on the pre-trained feature extractor*
 
+---
+About the datasets we used in this project:
+1. TUH normal/abnormal dataset, you can it find from the link: https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml
+Choose the option 'The TUH Abnormal EEG Corpus'. Note: You may need to sign up and send request to the organization to get the data. Due to the intellectual property reason, we can not directly share the data we used in the experiments.
+
+2. EEGBCI Motor Imagery dataset, you can find it from the link: https://physionet.org/content/eegmmidb/1.0.0/
+
+3. If reproduce the experiments, some paths settings in the code might need to be changed to correspond your local environment.
 
 --- 
 To train feature extractor on the self-supervised contrastive task:
