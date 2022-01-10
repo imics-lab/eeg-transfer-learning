@@ -8,23 +8,19 @@ The paper is under review for ICASSP 2022 conference
 ---
 
 **Abstract:** 
-There is currently a scarcity of labeled Electroencephalog-
-raphy (EEG) recordings, and different datasets usually have
+There is currently a scarcity of labeled Electroencephalography (EEG) recordings, and different datasets usually have
 incompatible setups (e.g., various sampling rates, number of
 channels, event lengths, etc.). These issues hinder machine
 learning practitioners from training general-purpose EEG
 models that can be reused on specific EEG classification
-tasks through transfer learning. We present a deep convo-
-lutional neural network architecture with a spatial pyramid
+tasks through transfer learning. We present a deep convolutional neural network architecture with a spatial pyramid
 pooling layer that is able to take in EEG signals of varying
-dimensionality and extract their features to fixed-size vec-
-tors. The model is trained with a contrastive self-supervised
+dimensionality and extract their features to fixed-size vectors. The model is trained with a contrastive self-supervised
 learning task on a large unlabelled dataset. We introduce a
 set of EEG signal augmentation techniques to generate large
 amounts of sample pairs to train the feature extractor. We
 then transfer the trained feature extractor to new downstream
-tasks. The experimental results show that the first few con-
-volutional layers of the feature extractor learn the general
+tasks. The experimental results show that the first few convolutional layers of the feature extractor learn the general
 features of the EEG data, which can significantly improve the
 classification performance on new datasets.
 
@@ -69,6 +65,26 @@ preprocessing/
 
 > tuh_downstream_preprocess.py -- *EEG signal proprocessing for downstram tuh normal/abnormal dataset*
 
+examples_res/
+> *.txt  -- *Recording names used for downstream transfer learning*
+
+> *.pt -- *Pre-trained feature extractor*
+
+> /tuh_tf_results *Raw transfer learning results for three extreme training sets*
+
+
+images/
+> EEGBCI.pdf -- *Transfer learning results on EEGBCI dataset*
+
+> SPP-EEG.pdf -- *The feature extractor architecture*
+
+> contrastive.pdf -- *The contrastive learning pipeline*
+
+> TUHDownstream.pdf -- *Feature extractor transfer learning results on TUH dataset with 30 normal and 30 abnormal recordings*
+
+> TUHDownstream_freeze0.pdf -- *Feature extractor transfer learning average results on TUH dataset with 5 normal and 5 abnormal recordings.*
+
+> TUHDownstrean_freeze4.pdf -- *Feature extractor with the first layer parameters frozen  transfer learning average results on TUH dataset with 5 normal and 5 abnormal recordings.*
 
 train_ssl.py -- *self-supervised training process on tuh normal/abnormal dataset*
 
@@ -80,6 +96,10 @@ EEGBCI_downstream.py -- *EEGBCI motor imagery dataset downstream transfer learni
 
 
 train_helpers.py -- *Some training helper functions*
+
+tuh_tf_smallset.py -- *transfer learning process on extreme small tuh normal/abnormal dataset*
+
+examples.ipynb -- *The example codes how to do conduct transfer learning on the pre-trained feature extractor*
 
 
 --- 
