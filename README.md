@@ -1,7 +1,7 @@
 ### SPP-EEGNET: An Input-Agnostic Self-Supervised EEG Rrpresentation Model For Inter-Dataset Transfer Learning
 
 ---
-The paper is under review for ICASSP 2022 conference
+The paper is published in The 18th International Conference on Computing and Information Technology (IC2IT)
 
 
 
